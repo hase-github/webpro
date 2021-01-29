@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1 class="display-4 text-center">Hello!</h1>
+    <p>
+      <script>
+        class Keisan {
+          constructor(data) {
+            this.data = data;
+          }
+
+          calc() {
+            let total = 0;
+            for (let n in this.data) {
+              total += this.data[n];
+            }
+            return total;
+          }
+
+          displayThis() {
+            return this;
+          }
+
+          report() {
+            document.write('<div class="alert alert-info">');
+            document.write("Data: " + this.data + "<br>");
+            document.write("total: " + this.calc() + "<br>");
+            document.write("this :" + this.displayThis());
+            document.write("</div>");
+            console.log(this);
+          }
+        }
+
+        let k1 = new Keisan([12, 34, 56, 78, 90]);
+        k1.report();
+        let k2 = new Keisan([109, 87, 65, 43, 21]);
+        k2.report();
+      </script>
+    </p>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1 class="display-4 text-center">Hello!</h1>
+    <p>
+      <script>
+        let arr = { 国語: 98, 数学: 76, 英語: 54, 理科: 78, 社会: 90 };
+        let total = 0;
+        for (let key in arr) {
+          total += arr[key];
+          document.write(key + ": " + arr[key] + "<br>");
+        }
+        document.write(
+          "合計は、" + total + "、平均は、" + total / 5 + "です。<br>"
+        );
+      </script>
+    </p>
+  </body>
+</html>

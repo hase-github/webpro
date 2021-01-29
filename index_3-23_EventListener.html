@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1>Hello!</h1>
+
+    <p id="msg" class="h4">type item...</p>
+
+    <div class="form=group">
+      <label for="f1">Item:</label>
+      <input type="text" id="f1" class="form-control" />
+    </div>
+
+    <div class="form-group">
+      <button onclick="action(event)" class="btn btn-primary">Click!</button>
+    </div>
+
+    <h6>List</h6>
+    <ul id="list" class="list-group"></ul>
+
+    <script>
+      const action = (event) => {
+        let f1 = document.querySelector("#f1");
+        let list = document.querySelector("#list");
+        let msg = document.querySelector("#msg");
+        if (f1.value == "") {
+          let item = list.children[0].remove();
+        } else {
+          let li = document.createElement("li");
+          li.className = "list-group-item";
+          li.textContent = f1.value;
+          li.addEventListener("click", clickItem);
+          list.append(li);
+          msg.textContent = `「${f1.value}」を追加しました。`;
+          f1.value = "";
+        }
+      };
+
+      const clickItem = (event) => {
+        let item = event.target;
+        //console.log(`item: ${item}`);
+        let items = item.parentNode.childNodes;
+        //console.log(`items: ${items}`);
+        //console.log(`items.length: ${items.length}`);
+        for (let i = 0; i < items.length; i++) {
+          items[i].classList.remove("active");
+          //console.log(`i: ${i}`);
+        }
+        item.classList.add("active");
+        let msg = document.querySelector("#msg");
+        msg.textContent = `selected: ${item.textContent}`;
+      };
+    </script>
+  </body>
+</html>

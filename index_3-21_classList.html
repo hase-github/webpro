@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1>Hello!</h1>
+    <p id="msg">Select color!</p>
+    <div class="form-group">
+      <label for="f2">Color</label>
+      <select id="list" class="form-control" onchange="action()">
+        <option>-</option>
+        <option>primary</option>
+        <option>secondary</option>
+        <option>success</option>
+      </select>
+    </div>
+    <script>
+      function action() {
+        var list = document.querySelector("#list");
+        var msg = document.querySelector("#msg");
+        if (list.value == "-") {
+          msg.className = "";
+          msg.textContent = "Select color! className=" + msg.className;
+          return;
+        }
+        msg.className = "";
+        msg.classList.add("alert");
+        msg.classList.add("alert-" + list.value);
+        msg.textContent =
+          'アラートカラーを "' +
+          list.value +
+          '" に変更しました。 className=' +
+          msg.className;
+      }
+    </script>
+  </body>
+</html>

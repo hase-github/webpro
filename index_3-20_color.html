@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1>Hello!</h1>
+    <p id="msg" class="h3 p-2">RGBを設定</p>
+    <div class="form-group">
+      <label for="R">R</label>
+      <input
+        type="range"
+        id="R"
+        min="0"
+        max="255"
+        class="form-control-range"
+        oninput="action()"
+      />
+    </div>
+    <div class="form-group">
+      <label for="G">G</label>
+      <input
+        type="range"
+        id="G"
+        min="0"
+        max="255"
+        class="form-control-range"
+        oninput="action()"
+      />
+    </div>
+    <div class="form-group">
+      <label for="B">B</label>
+      <input
+        type="range"
+        id="B"
+        min="0"
+        max="255"
+        class="form-control-range"
+        oninput="action()"
+      />
+    </div>
+    <script>
+      function action() {
+        var R = document.querySelector("#R");
+        var G = document.querySelector("#G");
+        var B = document.querySelector("#B");
+        var msg = document.querySelector("#msg");
+        var color = R.value + "," + G.value + "," + B.value;
+        msg.style.backgroundColor = "rgb(" + color + ")";
+        var val = Number(R.value) + Number(G.value) + Number(B.value);
+        if (val > 360) {
+          msg.style.color = "black";
+        } else {
+          msg.style.color = "white";
+        }
+        msg.textContent = "[ " + color + " ]" + " R + G + B =" + val;
+      }
+
+      //action();
+    </script>
+  </body>
+</html>

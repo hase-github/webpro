@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hello!</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container">
+    <h1 class="display-4 text-center">Hello!</h1>
+    <p id="msg">フォームを入力：</p>
+    <div class="form-group">
+      <label for="f1">Name</label>
+      <input type="text" id="f1" class="form-control" />
+    </div>
+    <div class="form-group">
+      <label for="f2">Password</label>
+      <input type="password" id="f2" class="form-control" />
+    </div>
+    <div class="form-group">
+      <button onclick="action(event)" class="btn btn-primary">Click!</button>
+    </div>
+    <script>
+      const action = (event) => {
+        let f1 = document.querySelector("#f1");
+        let f2 = document.querySelector("#f2");
+        let result =
+          "Your name: " +
+          f1.value +
+          "<br>" +
+          "Password:(" +
+          f2.value.length +
+          "chars)";
+        let msg = document.querySelector("#msg");
+        msg.innerHTML = result;
+      };
+    </script>
+  </body>
+</html>
