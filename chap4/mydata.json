@@ -1,0 +1,14 @@
+{
+  "0": { "mail": "syoda@tuyano.com", "name": "tuyano", "tel": "999-999" },
+  "1": { "mail": "hanako@flower", "name": "hanako", "tel": "888-888" },
+  "2": { "mail": "sachiko@happy", "name": "sachiko", "tel": "777-777" },
+  "3": { "mail": "taro@yamada", "name": "taro", "tel": "666-666" },
+  "4": { "mail": "mume@mo", "name": "mami", "tel": "555-555" },
+  "5": { "mail": "sample@sample", "name": "sample", "tel": "000-000" },
+  "default": { "mail": "no@mail", "name": "no name", "tel": "0-0-0" },
+  "sample": {
+    "mail": "sample@mail.address",
+    "name": "サンプルの名前",
+    "tel": "012-345-6789"
+  }
+}
