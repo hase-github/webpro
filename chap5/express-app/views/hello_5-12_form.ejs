@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title><%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css"
+    />
+  </head>
+  <body class="container p-3">
+    <h1><%= title %></h1>
+    <p id="msg" class="h4"><%- message %></p>
+    <form method="post" action="/hello">
+      <div class="form-group">
+        <label for="f1">Name</label>
+        <input type="text" id="f1" name="f1" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="f2">Password</label>
+        <input type="password" id="f2" name="f2" class="form-control" />
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" />
+      </div>
+    </form>
+  </body>
+</html>
