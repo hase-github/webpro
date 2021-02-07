@@ -1,0 +1,12 @@
+<%-include('header')%>
+
+<p>sampledata records.</p>
+<ol class="list-group">
+  <% for(let i in data){ %>
+  <li class="list-group-item">
+    <%=`${data[i].id}: ${data[i].name} (${data[i].mail})` %>
+  </li>
+  <% } %>
+</ol>
+
+<%-include('footer') %>
